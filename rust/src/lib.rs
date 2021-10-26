@@ -10,12 +10,6 @@ pub struct Site {
 }
 
 impl Site {
-  pub fn default() -> Result<Self> {
-    Self::new(
-      dirs::home_dir()?.join('.rmw'),
-
-    )
-  }
   pub fn new(root: String, secret: &[u8]) -> Result<Self> {
     let root: PathBuf = root.into();
     fs::create_dir_all(&root)?;
@@ -28,4 +22,5 @@ impl Site {
       },
     }
   }
+  pub fn add() {}
 }
